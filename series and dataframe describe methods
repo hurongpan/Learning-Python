@@ -1,7 +1,5 @@
-```python
 # Dataframe 的调用是以header为index
 profits_desc = f500['profits'].describe()
 # 选用多个columns要选到的keys放到[]
 revenue_and_employees_desc=f500[['revenues','employees']].describe()
 all_desc=f500.describe(include='all')
-```
