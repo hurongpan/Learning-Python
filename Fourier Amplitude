@@ -1,0 +1,15 @@
+N = np.size(y)
+T = N/Fs
+t = np.linspace(-T/2,T/2,N)
+
+# perform FT and multiply by dt
+dt = t[1]-t[0]
+ft = np.fft.fft(y) * dt      
+freq = np.fft.fftfreq(N, dt)
+freq = freq[:int(N/2+1)]
+
+# plot results
+plt.loglog(freq, np.abs(ft[:int(N/2+1)]),'b')
+plt.xlabel('Freq (Hz)')
+plt.ylabel('Frequency Amplitude')
+plt.show()
